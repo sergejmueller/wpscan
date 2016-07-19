@@ -35,7 +35,7 @@
     "valid-url": "^1.0.9"
   },
   "devDependencies": {
-    "eslint": "^3.0.0",
+    "eslint": "^2.13.1",
     "must": "^0.13.1",
     "mocha": "^2.5.1",
     "child-process-promise": "^2.0.3"

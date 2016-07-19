@@ -1,7 +1,8 @@
 ### v0.4.3 (2016-07-19)
 
 ##### Changes
-* Core: Remove ES6 source code for Node.js v0.10 support
+* Core: Remove ES6 source code for Node >= 0.10 support
+* Test: Set `eslint` to v2.13.1 (Node < 4 support)
 * Readme: Text changes
 
 
