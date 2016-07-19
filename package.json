@@ -1,6 +1,6 @@
 {
   "name": "wpscan",
-  "version": "0.4.2",
+  "version": "0.4.3",
   "description": "Vulnerability scanner for WordPress",
   "main": "index.js",
   "bin": {
@@ -43,8 +43,5 @@
   "scripts": {
     "lint": "eslint .",
     "test": "npm run lint && mocha --no-timeouts"
-  },
-  "engines": {
-    "node": ">=4"
   }
 }

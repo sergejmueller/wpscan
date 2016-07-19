@@ -4,7 +4,7 @@
 require( 'must/register' );
 
 
-const exec = require( 'child-process-promise' ).exec;
+var exec = require( 'child-process-promise' ).exec;
 
 
 describe( 'wpscan CLI', function() {
@@ -18,7 +18,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan httpp://ma.tt' ).then( function( result ) {
 
-            const data = result.stderr.trim();
+            var data = result.stderr.trim();
 
             data.must.have.string( 'is not a valid URL' );
 
@@ -37,7 +37,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan http://ma.ttt' ).then( function( result ) {
 
-            const data = result.stderr.trim();
+            var data = result.stderr.trim();
 
             data.must.have.string( 'Can not resolve' );
 
@@ -56,7 +56,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan https://www.google.de' ).then( function( result ) {
 
-            const data = result.stderr.trim();
+            var data = result.stderr.trim();
 
             data.must.have.string( 'is not using WordPress' );
 
@@ -75,7 +75,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan http://ma.tt' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.have.string( 'New site URL: http://ma.tt → https://ma.tt' );
             data.must.have.string( 'New WordPress URL: https://ma.tt → https://ma.tt/blog' );
@@ -108,7 +108,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan http://ma.tt --rules-dir ./example/rules' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.have.string( 'Custom wpscan rule fired!' );
 
@@ -127,7 +127,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan http://ma.tt -r ~/example/rules' ).then( function( result ) {
 
-            const data = result.stderr.trim();
+            var data = result.stderr.trim();
 
             data.must.have.string( 'no such file or directory' );
 
@@ -146,7 +146,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan http://ma.tt --silent' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.be.empty;
 
@@ -165,7 +165,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan http://ma.tt https://wpengine.com --silent' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.be.empty;
 
@@ -184,7 +184,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan ma.tt -s' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.be.empty;
 
@@ -203,7 +203,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan ma.tt wpengine.com -s' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.be.empty;
 
@@ -222,7 +222,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan -b ./example/sources/list.txt -s' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.be.empty;
 
@@ -241,7 +241,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan ma.tt -b ./example/sources/list.txt -s' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.be.empty;
 
@@ -260,7 +260,7 @@ describe( 'wpscan CLI', function() {
 
         exec( 'wpscan --help' ).then( function( result ) {
 
-            const data = result.stdout.trim();
+            var data = result.stdout.trim();
 
             data.must.have.string( 'Usage' );
             data.must.have.string( 'wpscan <url> [url] [options]' );
