@@ -37,7 +37,7 @@ Option | Shortcut | Description
 ------ | -------- | -----------
 `--help` | `-h` | Outputs supplied help text.
 `--silent` | `-s` | Disables success and info messages. Displays warnings only.
-`--rules-dir` | `-r` | Loads additional rules from any directory (see below).
+`--rules-dir` | `-r` | Loads additional rules from a directory (see below).
 `--bulk-file` | `-b` | Reads additional WordPress site URLs from a text file (see below).
 `--user-agent` | `-u` | Defines a custom `User-Agent` string. Default is `wpscan`.
 
@@ -56,9 +56,9 @@ wpscan https://ma.tt --user-agent "Netscape Gold"
 
 Default rules
 -----
-`wpscan` has a few rules that are enabled by default. You can expand the tool functionality by building their own rules (see below).
+`wpscan` has a few rules that are enabled by default:
 
-1. Check sensitive WordPress/Apache/Dot files for their availability
+- **Check sensitive WordPress/Apache/Dot files for their availability**
   - `/wp-config.php`
   - `/wp-admin/maint/repair.php`
   - `/.htaccess`
@@ -71,14 +71,14 @@ Default rules
   - `/wp-config-sample.php`
   - `/wp-content/debug.log`
 
-2. Scan WordPress login page for mistakes
+- **Scan WordPress login page for security mistakes**
   - Basic access `authentication`
   - `HTTPS` protocol usage
 
 
 Custom rules
 -----
-The option `--rules-dir` allows loading of user-defined rules from a custom directory.
+The power of `wpscan` is the flexibility: You can expand the tool functionality by building their own rules. The option `--rules-dir` allows loading of user-defined rules from a custom directory.
 
 - The directory path
   - can be absolute or relative to the `wpscan` folder

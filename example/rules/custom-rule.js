@@ -1,7 +1,8 @@
 'use strict';
 
 
-const log = require( 'log' );
+// app module
+var log = require( 'log' );
 
 
 /**
