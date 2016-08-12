@@ -11,8 +11,8 @@
 ### Features
 
 - [Preinstalled rules](#default-rules) for a quick start.
-- [Custom rules](#custom-rules) increases the functionality.
-- [Selective ignoring](#ignore-rules) default and custom rules.
+- [Custom rules](#custom-rules) increase the functionality.
+- [Selectively ignore](#ignore-rules) default and custom rules.
 - Multiple WordPress scans from a [bulk file](#bulk-scan).
 - Detection for
   - WordPress directories (`wp-content`, ...).
@@ -85,7 +85,7 @@ wpscan https://ma.tt --ignore-rule wp-login.js
   - `/wp-config-sample.php`
   - `/wp-content/debug.log`
 
-##### 2. Scans WordPress login page for security mistakes
+##### 2. Scans WordPress login page for security issues
   - Basic access authentication
   - HTTPS protocol usage
 
@@ -104,7 +104,7 @@ The power of `wpscan` is the flexibility: You can expand the tool functionality 
   - must be stored as `.js` files
   - can be a `Node.js` script
   - can be a `npm` package
-  - must have a exported function named `fire`
+  - must have an exported function named `fire`
 
 ```javascript
 exports.fire = ( data ) => {
